@@ -30,10 +30,11 @@ def signUpview(request):
         if form.is_valid():
             data = form.cleaned_data
             CustUser.objects.create_user(
-                    username=data["username"],
-                    password=data['password']
+                    username=data['username'],
+                    password=data['password'],
+                    display_name=data['display_name']
             )
-            return HttpResponseRedirect(reverse('home'))
+            return HttpResponseRedirect(reverse('login'))
     form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
 

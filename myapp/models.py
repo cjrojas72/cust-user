@@ -3,4 +3,5 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class CustUser(AbstractUser):
-    pass
+    display_name = models.CharField(max_length=50)
+    REQUIRED_FIELDS = ['display_name']

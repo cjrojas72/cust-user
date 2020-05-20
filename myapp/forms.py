@@ -7,4 +7,5 @@ class LoginForm(forms.Form):
 
 class SignUpForm(forms.Form):
     username = forms.CharField(max_length=50, required=True)
+    display_name = forms.CharField(max_length=50, required=True)
     password = forms.CharField(max_length=50, required=True)
